@@ -23,7 +23,7 @@ class Training
     private ?string $videos = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $chat = null;
+    private ?string $comment = null;
 
     public function getId(): ?int
     {
@@ -66,14 +66,14 @@ class Training
         return $this;
     }
 
-    public function getChat(): ?string
+    public function getcomment(): ?string
     {
-        return $this->chat;
+        return $this->comment;
     }
 
-    public function setChat(string $chat): self
+    public function setcomment(string $comment): self
     {
-        $this->chat = $chat;
+        $this->comment = $comment;
 
         return $this;
     }
