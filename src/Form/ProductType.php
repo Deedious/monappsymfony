@@ -2,30 +2,27 @@
 
 namespace App\Form;
 
+use App\Entity\Product;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
-class ContactType extends AbstractType
+class ProductType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
             ->add('name')
-            ->add('objet')
-            ->add('email', EmailType::class)
-            ->add('message',TextareaType::class)
-            ->add('envoyer', SubmitType::class)
+            ->add('description')
+            ->add('price')
+            ->add('Categorie')
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            // Configure your form options here
+            'data_class' => Product::class,
         ]);
     }
 }

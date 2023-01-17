@@ -36,6 +36,11 @@ class Categories
         return $this->title;
     }
 
+    public function __toString()
+    {
+        return $this->title;
+    }
+
     public function setTitle(string $title): self
     {
         $this->title = $title;
