@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Bcomments{% endblock %}
+
+{% block body %}
+    <h1>Edit Bcomment</h1>
+
+    {{ include('bcomments/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_bcomments_index') }}">back to list</a>
+
+    {{ include('bcomments/_delete_form.html.twig') }}
+{% endblock %}

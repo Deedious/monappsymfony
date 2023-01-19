@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Barticles index{% endblock %}
+
+{% block body %}
+    <h1>Barticles index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Author</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for barticle in barticles %}
+            <tr>
+                <td>{{ barticle.id }}</td>
+                <td>{{ barticle.title }}</td>
+                <td>{{ barticle.description }}</td>
+                <td>{{ barticle.author }}</td>
+                <td>
+                    <a href="{{ path('app_barticles_show', {'id': barticle.id}) }}">show</a>
+                    <a href="{{ path('app_barticles_edit', {'id': barticle.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">No Records Found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_barticles_new') }}">Create new</a>
+{% endblock %}
